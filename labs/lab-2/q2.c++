@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 using namespace std;
 
 class BankAccount
@@ -47,7 +46,6 @@ int main()
     int choice;
     do
     {
-        cout << "\033[2J\033[H";
         cout << "Select options from below:" << endl;
         cout << "1. Display balance" << endl;
         cout << "2. Display number of transactions" << endl;
@@ -56,18 +54,15 @@ int main()
         cout << "5. Make a withdrawal" << endl;
         cout << "6. Exit" << endl;
         cin >> choice;
-        cout << "\033[2J\033[H";
         switch (choice)
         {
         case 1:
             cout << "Current balance: ";
             cout << myAccount.getBalance() << endl;
-            getch();
             break;
         case 2:
             cout << "Number of transactions: ";
             cout << myAccount.getTransactionCount() << endl;
-            getch();
             break;
         case 3:
             cout << "Enter annual interest rate (in %): ";
@@ -75,7 +70,6 @@ int main()
             cin >> rate;
             cout << "Interest earned for this period: ";
             cout << (myAccount.getBalance() * rate / 100) / 12 << endl;
-            getch();
             break;
         case 4:
             cout << "Current balance: ";
@@ -90,7 +84,6 @@ int main()
                 cout << "New balance: ";
                 cout << myAccount.getBalance() << endl;
             }
-            getch();
             break;
         case 5:
             cout << "Current balance: ";
@@ -105,14 +98,12 @@ int main()
                 cout << "New balance: ";
                 cout << myAccount.getBalance() << endl;
             }
-            getch();
             break;
         case 6:
             cout << "Exiting..." << endl;
             break;
         default:
             cout << "Invalid option" << endl;
-            getch();
             break;
         }
     } while (choice != 6);
