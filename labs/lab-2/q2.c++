@@ -46,7 +46,7 @@ int main()
     int choice;
     do
     {
-        cout << "Select options from below:" << endl;
+        cout << "\n\nSelect options from below:" << endl;
         cout << "1. Display balance" << endl;
         cout << "2. Display number of transactions" << endl;
         cout << "3. Display interest earned for this period" << endl;
@@ -54,6 +54,7 @@ int main()
         cout << "5. Make a withdrawal" << endl;
         cout << "6. Exit" << endl;
         cin >> choice;
+        cout << endl;
         switch (choice)
         {
         case 1:
