@@ -40,6 +40,10 @@ public:
     void raise(float perc) {
         salary += salary*perc/100.0;
     }
+
+    ~Employee() {
+        delete[] firstName;
+    }
 };
 
 int main()
