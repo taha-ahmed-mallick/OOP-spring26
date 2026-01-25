@@ -5,3 +5,4 @@
 *.bat
 *.sh
 *.out
+labs/submission/*/*.docx
