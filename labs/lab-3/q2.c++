@@ -3,9 +3,10 @@ using namespace std;
 
 class Character
 {
+    // member variables
     int *health, *power, *defense;
-
 public:
+    // setter methods
     void setHealth(int input)
     {
         *health = input;
@@ -18,6 +19,7 @@ public:
     {
         *defense = input;
     }
+    // getter methods
     int getHealth()
     {
         return *health;
@@ -30,6 +32,7 @@ public:
     {
         return *defense;
     }
+    // Constructors
     Character()
     {
         health = new int(100);
@@ -52,20 +55,25 @@ public:
 
 int main()
 {
-    Character taha;
-    Character arslan(80, 200, 500);
-    Character buzrg = taha;
-    cout << "Taha" << endl
-         << "Health: " << taha.getHealth() << endl
-         << "Power: " << taha.getPower() << endl
-         << "Defense: " << taha.getDefense() << endl;
-    cout << "Arslan" << endl
-         << "Health: " << arslan.getHealth() << endl
-         << "Power: " << arslan.getPower() << endl
-         << "Defense: " << arslan.getDefense() << endl;
-    cout << "Aryan" << endl
-         << "Health: " << buzrg.getHealth() << endl
-         << "Power: " << buzrg.getPower() << endl
-         << "Defense: " << buzrg.getDefense() << endl;
+    Character a, b(80, 200, 500);
+    Character c = a;
+
+    cout << "Character A:" << endl
+         << "Health: " << a.getHealth() << endl
+         << "Power: " << a.getPower() << endl
+         << "Defense: " << a.getDefense() << endl
+         << endl;
+
+    cout << "Character B:" << endl
+         << "Health: " << b.getHealth() << endl
+         << "Power: " << b.getPower() << endl
+         << "Defense: " << b.getDefense() << endl
+         << endl;
+
+    cout << "Character C:" << endl
+         << "Health: " << c.getHealth() << endl
+         << "Power: " << c.getPower() << endl
+         << "Defense: " << c.getDefense() << endl;
+
     return 0;
 }

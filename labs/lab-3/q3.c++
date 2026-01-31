@@ -3,43 +3,43 @@ using namespace std;
 
 class TollBooth
 {
-public:
     int totalCars;
     double totalMoney;
+public:
 
-    void payingCart(int cars)
+    void payingCar(void)
     {
-        totalCars += cars;
-        totalMoney += 0.50 * cars;
+        totalCars++;
+        totalMoney += 0.50;
     }
-    void displayCart()
+    void displayTollData()
     {
         cout << "Total Cars: " << totalCars << endl
-             << "Total Money: " << totalMoney << "Rs" << endl
+             << "Total Money: $" << totalMoney << endl
              << endl;
     }
-    TollBooth()
-    {
-        totalCars = 0;
-        totalMoney = 0;
-    }
+
+    TollBooth() : totalCars(0), totalMoney(0.0) {}
 };
 
 int main()
 {
 
-    TollBooth firstStation;
+    TollBooth hyderabadStation;
 
     cout << "Morning Shift:-" << endl;
-    firstStation.payingCart(50);
-    firstStation.displayCart();
+    for (int i = 0; i < 50; i++)
+        hyderabadStation.payingCar();
+    hyderabadStation.displayTollData();
 
     cout << "Evening Shift:-" << endl;
-    firstStation.payingCart(100);
-    firstStation.displayCart();
+    for (int i = 0; i < 100; i++)
+        hyderabadStation.payingCar();
+    hyderabadStation.displayTollData();
 
     cout << "Night Shift:-" << endl;
-    firstStation.payingCart(10);
-    firstStation.displayCart();
+    for (int i = 0; i < 10; i++)
+        hyderabadStation.payingCar();
+    hyderabadStation.displayTollData();
     return 0;
 }
