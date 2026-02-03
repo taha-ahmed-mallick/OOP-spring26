@@ -129,7 +129,8 @@ int main()
                 int ISBN, noOfCpy, noOfAuth;
                 float price;
                 cout << "Enter title of the book: ";
-                cin >> title;
+                cin.ignore();
+                getline(cin, title);
                 books[totalBooks].setTitle(title);
                 cout << "Enter number of authors: ";
                 cin >> noOfAuth;
@@ -138,11 +139,13 @@ int main()
                 for (int i = 0; i < noOfAuth && i < 4; i++)
                 {
                     cout << "Enter the name of author " << i + 1 << ": ";
-                    cin >> author;
+                    cin.ignore();
+                getline(cin, author);
                     books[totalBooks].setAuth(author);
                 }
                 cout << "Enter the name of publisher: ";
-                cin >> pub;
+                cin.ignore();
+                getline(cin, pub);
                 books[totalBooks].setPub(pub);
                 cout << "Enter the ISBN number: ";
                 cin >> ISBN;
@@ -171,7 +174,8 @@ int main()
         {
             string title;
             cout << "Enter the title: ";
-            cin >> title;
+            cin.ignore();
+                getline(cin, title);
             int matches = 0;
             for (int i = 0; i < totalBooks; i++)
                 if (books[i].checkTitle(title))
@@ -207,7 +211,8 @@ int main()
         {
             string pub;
             cout << "Enter the Publisher: ";
-            cin >> pub;
+            cin.ignore();
+                getline(cin, pub);
             int matches = 0;
             for (int i = 0; i < totalBooks; i++)
                 if (books[i].getPub() == pub)
