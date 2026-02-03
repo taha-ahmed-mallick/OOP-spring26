@@ -140,7 +140,7 @@ int main()
                 {
                     cout << "Enter the name of author " << i + 1 << ": ";
                     cin.ignore();
-                getline(cin, author);
+                    getline(cin, author);
                     books[totalBooks].setAuth(author);
                 }
                 cout << "Enter the name of publisher: ";
@@ -175,7 +175,7 @@ int main()
             string title;
             cout << "Enter the title: ";
             cin.ignore();
-                getline(cin, title);
+            getline(cin, title);
             int matches = 0;
             for (int i = 0; i < totalBooks; i++)
                 if (books[i].checkTitle(title))
@@ -212,7 +212,7 @@ int main()
             string pub;
             cout << "Enter the Publisher: ";
             cin.ignore();
-                getline(cin, pub);
+            getline(cin, pub);
             int matches = 0;
             for (int i = 0; i < totalBooks; i++)
                 if (books[i].getPub() == pub)
@@ -242,7 +242,8 @@ int main()
                 }
             if (!found)
                 cout << "\033[1;31mThe book with ISBN " << ISBN << " doesn't exists.\033[0m" << endl;
-            else {
+            else
+            {
                 int cpy;
                 cout << "Current number of copies: " << books[i].getCopies() << endl;
                 cout << "Add number of copies: ";
