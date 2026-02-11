@@ -59,10 +59,7 @@ public:
     {
         cout << "Your array: ";
         for (int i = 0; i < arraySize; i++)
-            if (i != arraySize - 1)
-                cout << arr[i] << ", ";
-            else
-                cout << arr[i];
+            cout << arr[i] << (i == arraySize - 1 ? "" : ", ");
         cout << endl
              << "Total elements: " << arraySize << endl;
     }
