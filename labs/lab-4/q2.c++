@@ -13,12 +13,6 @@ class DynamicArray
 
 public:
     DynamicArray(int size) : arraySize(size) { this->arr = new int[size](); }
-    DynamicArray(int *arr, int size) : arraySize(size)
-    {
-        this->arr = new int[5]();
-        for (int i = 0; i < size; i++)
-            this->arr[i] = arr[i];
-    }
     void push(int val)
     {
         int *temp = new int[arraySize + 1];
@@ -28,6 +22,8 @@ public:
         delete[] arr;
         arr = temp;
     }
+    int size() { return arraySize; }
+    // just for fun
     useless pop()
     {
         useless idk = {0, false};
@@ -46,18 +42,6 @@ public:
             idk.err = true;
         }
         return idk;
-    }
-    int size() { return arraySize; }
-    bool set(int val, int index)
-    {
-        if (index < 0 || index >= arraySize)
-        {
-            cout << "Invalid index. Array size is " << this->size() << endl;
-            return true;
-        }
-        else
-            arr[index] = val;
-        return false;
     }
     useless get(int index)
     {
@@ -81,6 +65,24 @@ public:
                 cout << arr[i];
         cout << endl
              << "Total elements: " << arraySize << endl;
+    }
+    // required functions and constructors because the given conditions were insufficient to access the initialy declared elements.
+    DynamicArray(int *arr, int size) : arraySize(size)
+    {
+        this->arr = new int[size]();
+        for (int i = 0; i < size; i++)
+            this->arr[i] = arr[i];
+    }
+    bool set(int val, int index)
+    {
+        if (index < 0 || index >= arraySize)
+        {
+            cout << "Invalid index. Array size is " << this->size() << endl;
+            return true;
+        }
+        else
+            arr[index] = val;
+        return false;
     }
     ~DynamicArray() { delete[] arr; }
 };
