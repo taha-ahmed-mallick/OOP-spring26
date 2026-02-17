@@ -16,6 +16,8 @@ public:
     char *getName() { return EmployeeName; }
     void changeName(const char *name)
     {
+        if (EmployeeName == name)
+            return;
         delete[] EmployeeName;
         EmployeeName = new char[strlen(name) + 1]();
         strcpy(EmployeeName, name);
@@ -32,7 +34,7 @@ int main()
     cout << Employee2.getID() << "\t" << Employee2.getName() << endl;
     cout << Employee3.getID() << "\t" << Employee3.getName() << endl;
 
-    Employee2.changeName(Employee2.getName());
+    Employee2.changeName("Taha");
 
     cout << "\033[1;33m====After changing Employee2 name====\033[0m" << endl;
     cout << "IDs\tNames" << endl;
