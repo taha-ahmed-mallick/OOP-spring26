@@ -13,9 +13,9 @@ public:
     void setAccBal(int acc_bal) { this->acc_bal = acc_bal; }
     void setSecurityCode(int security_code) { this->security_code = security_code; }
 
-    int getAccNo() { return acc_no; }
-    int getAccBal() { return acc_bal; }
-    int getSecurityCode() { return security_code; }
+    int getAccNo() const { return acc_no; }
+    int getAccBal() const { return acc_bal; }
+    int getSecurityCode() const { return security_code; }
 
     static int getAccCount() { return acc_count; }
 
