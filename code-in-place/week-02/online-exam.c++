@@ -28,11 +28,11 @@ class ExamResult {
 };
 
 int main() {
-    ExamResult OOPs;
+    ExamResult OOP;
     int score;
-    cout << "Enter your OOPs exam marks: ";
+    cout << "Enter your OOP exam marks: ";
     cin >> score;
-    OOPs.setMarks(score);
-    OOPs.getGrade();
+    OOP.setMarks(score);
+    OOP.getGrade();
     return 0;
 }
