@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int roll, marks[5], obt = 0, total = 500;
-    char sub_name[][5] = {"CAG", "DS", "LDST", "OOPs", "PS"};
+    char sub_name[][5] = {"CAG", "DS", "LDST", "OOP", "PS"};
     cout << "Enter Roll No.: ";
     cin >> roll;
     for (int i = 0; i < 5; i++)
