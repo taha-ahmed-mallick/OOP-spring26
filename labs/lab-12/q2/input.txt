@@ -1,0 +1,4 @@
+Here is some text
+that will be copied
+exactly into another
+FILE :)
